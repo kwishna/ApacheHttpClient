@@ -45,6 +45,7 @@ import com.google.gson.JsonParser;
  * 
  * http://hc.apache.org/httpcomponents-client-ga/tutorial/html/fundamentals.html - Http Client
  * https://hc.apache.org/httpcomponents-core-dev/tutorial/html/fundamentals.html - Http Core
+ * https://github.com/eugenp/tutorials/tree/master/httpclient
  * 
  */
 public class ApacheHttpAPI {
@@ -78,7 +79,7 @@ public class ApacheHttpAPI {
          *
 		 */
 		
-		CloseableHttpResponse  response = client.execute(httpGet);
+		CloseableHttpResponse response = client.execute(httpGet);
 		
 		return response;
 	}
@@ -115,7 +116,7 @@ public class ApacheHttpAPI {
 	}
 	
 	// Getting All Headers
-	public void printHeaders(CloseableHttpResponse  response) {
+	private void printHeaders(CloseableHttpResponse response) {
 		
 		Header[] header = response.getAllHeaders(); // Header header = new BasicHeader(HttpHeaders.CACHE_CONTROL, "no-cache");
 		Arrays.asList(header).forEach(a->{
